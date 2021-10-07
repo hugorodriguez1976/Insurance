@@ -10,19 +10,19 @@ namespace Insurance.WebApp.Controllers
         private readonly IOccupationRepository _occupationRepository;
         private readonly IRatingRepository _ratingRepository;
 
-        OccupationController()
-        {
+        //OccupationController()
+        //{
 
 
-            StandardKernel _kernel = new StandardKernel();
-            _kernel.Load(Assembly.GetExecutingAssembly());
-            _occupationRepository = _kernel.Get<IOccupationRepository>();
-            _ratingRepository = _kernel.Get<IRatingRepository>();
+        //    StandardKernel _kernel = new StandardKernel();
+        //    _kernel.Load(Assembly.GetExecutingAssembly());
+        //    _occupationRepository = _kernel.Get<IOccupationRepository>();
+        //    _ratingRepository = _kernel.Get<IRatingRepository>();
 
 
-            //_occupationRepository = new OccupationRepository();
-            //_ratingRepository = new RatingRepository();
-        }
+        //    //_occupationRepository = new OccupationRepository();
+        //    //_ratingRepository = new RatingRepository();
+        //}
         OccupationController(IOccupationRepository occupationRepository, IRatingRepository ratingRepository)
         {
             _occupationRepository = occupationRepository;

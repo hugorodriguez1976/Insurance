@@ -15,15 +15,6 @@ namespace Insurance.WebApp
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            this.LoadModules();
-        }
-
-        private void LoadModules()
-        {
-          //  new Insurance.WebApp.InfraStructure.NinjectBindings().Load();
-            //new Insurance.WebApp.InfraStructure.Ioc().LoadModules();
-            // new Debtrak.Core.BusinessLibrary.IocRegister.IocRegister().LoadCore();
         }
     }
 }
