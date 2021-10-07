@@ -16,8 +16,7 @@ namespace Insurance.WebClient.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            PremiumVM premiumvm = new PremiumVM();
-            
+            PremiumVM premiumvm = new PremiumVM();         
             
             PremiumModelHelper modelHelper = new PremiumModelHelper();
             premiumvm.OccupationForList = modelHelper.PopulatePremiumVM();
@@ -40,7 +39,7 @@ namespace Insurance.WebClient.Controllers
                 {
                     premiumDetails.Age = DateTime.Now.Year - premiumDetails.Dob.Year;
 
-                    premiumDetails.PremiumAmount = modelHelper.CalculatePremium(premiumDetails.Age, premiumDetails.Amount, premiumDetails.Age);
+                    premiumDetails.PremiumAmount = 1233.25; // modelHelper.CalculatePremium(premiumDetails.Age, premiumDetails.Amount, premiumDetails.Age);
                 }
             }
 

@@ -29,8 +29,11 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             @Html.LabelFor(modal => modal.Age) :
+                            @Html.DisplayFor(modal => modal.Age)
                         </div>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
                             @Html.LabelFor(modal => modal.Dob) :
@@ -38,12 +41,8 @@
                             @Html.ValidationMessageFor(model => model.Dob, "", new { @class = "text-danger" })
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            @Html.LabelFor(modal => modal.Age)
-                        </div>
-                    </div>
-
+                </div>
+                <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
                             @Html.LabelFor(modal => modal.OccupationId) :
@@ -51,6 +50,8 @@
                             @Html.ValidationMessageFor(model => model.OccupationId, "", new { @class = "text-danger" })
                         </div>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
                             @Html.LabelFor(modal => modal.Amount) :
@@ -58,9 +59,12 @@
                             @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
                         </div>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
-                            @Html.LabelFor(modal => modal.PremiumAmount)
+                            @Html.LabelFor(modal => modal.PremiumAmount) :
+                            @Html.DisplayFor(modal => modal.PremiumAmount) 
                         </div>
                     </div>
                 </div>
@@ -75,16 +79,16 @@
 </div>
 
     <script>
-        function submit(e) {
-            e.preventDefault();
-            var form = $('#frmCalculate');
+        $(document).ready(function () {
+            $('#BtnSubmit').on('click', function (e) {
+                e.preventDefault();
+                var form = $('#frmCalculate');
+                form.submit();
+            });
 
-            // showModelPop("Please wait.Updating details...", "Warning!!");
-            form.submit();
-        }
-
-        $('#BtnSubmit').on('click', submit(e));
-
-        $("#OccupationId").on("change", submit(e));
-
+            $("#OccupationId").on('change', function () {
+                var form = $('#frmCalculate');
+                form.submit();
+            });
+        });
     </script>
