@@ -1,0 +1,90 @@
+﻿@model Insurance.WebClient.Models.PremiumVM
+@{
+    ViewBag.Title = "Insurance premium Page";
+}
+
+<div class="jumbotron">
+    <h1>Test exam</h1>
+</div>
+
+<div class="row">
+
+    @using (Html.BeginForm("Calculate", "Insurance", FormMethod.Post, new { id = "frmCalculate" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(modal => modal.Name) :
+                            @Html.TextBoxFor(modal => modal.Name, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(modal => modal.Age) :
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(modal => modal.Dob) :
+                            @Html.TextBoxFor(modal => modal.Dob, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Dob, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(modal => modal.Age)
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(modal => modal.OccupationId) :
+                            @Html.DropDownListFor(modal => modal.OccupationId, Model.OccupationForList, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.OccupationId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(modal => modal.Amount) :
+                            @Html.TextBoxFor(modal => modal.Amount, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(modal => modal.PremiumAmount)
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button id="BtnSubmit" title="Submit" type="submit" class="btn btn-primary pull-left">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+    <script>
+        function submit(e) {
+            e.preventDefault();
+            var form = $('#frmCalculate');
+
+            // showModelPop("Please wait.Updating details...", "Warning!!");
+            form.submit();
+        }
+
+        $('#BtnSubmit').on('click', submit(e));
+
+        $("#OccupationId").on("change", submit(e));
+
+    </script>

@@ -1,7 +1,10 @@
-﻿using Insurance.WebApp.Repository;
+﻿using Insurance.Model;
+using Insurance.WebApp.Repository;
 using Ninject;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Web.Http;
+using System.Web.Http.Description;
 
 namespace Insurance.WebApp.Controllers
 {
@@ -13,6 +16,7 @@ namespace Insurance.WebApp.Controllers
         //todo: to fix issue with DI
         OccupationController()
         {
+            
             StandardKernel _kernel = new StandardKernel();
             _kernel.Load(Assembly.GetExecutingAssembly());
             _occupationRepository = _kernel.Get<IOccupationRepository>();
@@ -26,6 +30,7 @@ namespace Insurance.WebApp.Controllers
 
         [Route("api/occupation/getall")]
         [HttpGet]
+        [ResponseType(typeof(List<Occupation>))]
         public IHttpActionResult GetAll()
         {
             var occupationItems = _occupationRepository.GetAll();
@@ -34,6 +39,7 @@ namespace Insurance.WebApp.Controllers
 
         [Route("api/occupation/{id}")]
         [HttpGet]
+        [ResponseType(typeof(Occupation))]
         public IHttpActionResult GetById(int id)
         {
             var occupationItem = _occupationRepository.GetById(id);
@@ -42,6 +48,7 @@ namespace Insurance.WebApp.Controllers
 
         [Route("api/occupation/calculatepremium")]
         [HttpGet]
+        [ResponseType(typeof(double))]
         public IHttpActionResult CalculatePremium(int OccupationId, double Amount, int Age)
         {
             double premium = 0L;
