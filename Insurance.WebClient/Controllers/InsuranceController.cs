@@ -38,8 +38,7 @@ namespace Insurance.WebClient.Controllers
                 else
                 {
                     premiumDetails.Age = DateTime.Now.Year - premiumDetails.Dob.Year;
-
-                    premiumDetails.PremiumAmount = 1233.25; // modelHelper.CalculatePremium(premiumDetails.Age, premiumDetails.Amount, premiumDetails.Age);
+                    premiumDetails.PremiumAmount = modelHelper.CalculatePremium(premiumDetails.OccupationId , premiumDetails.Amount, premiumDetails.Age);
                 }
             }
 
