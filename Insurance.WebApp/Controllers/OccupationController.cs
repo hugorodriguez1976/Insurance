@@ -16,7 +16,7 @@ namespace Insurance.WebApp.Controllers
         //todo: to fix issue with DI
         OccupationController()
         {
-            
+
             StandardKernel _kernel = new StandardKernel();
             _kernel.Load(Assembly.GetExecutingAssembly());
             _occupationRepository = _kernel.Get<IOccupationRepository>();
