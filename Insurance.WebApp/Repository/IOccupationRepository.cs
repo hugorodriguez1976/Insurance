@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Insurance.WebApp.Repository
 {
-    interface IOccupationRepository
+    public interface IOccupationRepository
     {
         List<Occupation> GetAll();
         Occupation GetById(int Id);

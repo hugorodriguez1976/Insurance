@@ -9,6 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Insurance.Model", "Insuranc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Insurance.WebClient", "Insurance.WebClient\Insurance.WebClient.csproj", "{73F8F29E-7E27-486E-A3A2-1C09A02D7053}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Insurance.WebAppTest", "Insurance.WebAppTest\Insurance.WebAppTest.csproj", "{A92822DA-F67E-42BB-838B-F47456B6174C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E354ECC5-9315-4E0D-811B-92E766CD56CC} = {E354ECC5-9315-4E0D-811B-92E766CD56CC}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +32,10 @@ Global
 		{73F8F29E-7E27-486E-A3A2-1C09A02D7053}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73F8F29E-7E27-486E-A3A2-1C09A02D7053}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73F8F29E-7E27-486E-A3A2-1C09A02D7053}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A92822DA-F67E-42BB-838B-F47456B6174C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A92822DA-F67E-42BB-838B-F47456B6174C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A92822DA-F67E-42BB-838B-F47456B6174C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A92822DA-F67E-42BB-838B-F47456B6174C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

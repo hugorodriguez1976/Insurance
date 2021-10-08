@@ -14,7 +14,7 @@ namespace Insurance.WebApp.Controllers
         private readonly IRatingRepository _ratingRepository;
 
         //todo: to fix issue with DI
-        OccupationController()
+        public OccupationController()
         {
 
             StandardKernel _kernel = new StandardKernel();
@@ -22,7 +22,7 @@ namespace Insurance.WebApp.Controllers
             _occupationRepository = _kernel.Get<IOccupationRepository>();
             _ratingRepository = _kernel.Get<IRatingRepository>();
         }
-        OccupationController(IOccupationRepository occupationRepository, IRatingRepository ratingRepository)
+        public OccupationController(IOccupationRepository occupationRepository, IRatingRepository ratingRepository)
         {
             _occupationRepository = occupationRepository;
             _ratingRepository = ratingRepository;
@@ -51,7 +51,7 @@ namespace Insurance.WebApp.Controllers
         [ResponseType(typeof(double))]
         public IHttpActionResult CalculatePremium(int OccupationId, double Amount, int Age)
         {
-            double premium = 0L;
+            double premium = 0.00;
             var occupationItem = _occupationRepository.GetById(OccupationId);
             if (occupationItem != null)
             {

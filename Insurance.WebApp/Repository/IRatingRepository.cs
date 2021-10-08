@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Insurance.WebApp.Repository
 {
-    interface IRatingRepository
+    public interface IRatingRepository
     {
         List<Rating> GetAll();
         Rating GetById(int Id);
