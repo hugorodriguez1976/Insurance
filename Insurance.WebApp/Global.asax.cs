@@ -1,5 +1,4 @@
-﻿using Insurance.WebApp.InfraStructure;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -15,9 +14,6 @@ namespace Insurance.WebApp
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            new Insurance.WebApp.InfraStructure.Ioc().LoadModules();
-            //new Insurance.WebApp.InfraStructure.NinjectBindings().Load();
         }
 
     }

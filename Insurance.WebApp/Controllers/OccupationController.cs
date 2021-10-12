@@ -13,15 +13,6 @@ namespace Insurance.WebApp.Controllers
         private readonly IOccupationRepository _occupationRepository;
         private readonly IRatingRepository _ratingRepository;
 
-        //todo: to fix issue with DI
-        public OccupationController()
-        {
-
-            StandardKernel _kernel = new StandardKernel();
-            _kernel.Load(Assembly.GetExecutingAssembly());
-            _occupationRepository = _kernel.Get<IOccupationRepository>();
-            _ratingRepository = _kernel.Get<IRatingRepository>();
-        }
         public OccupationController(IOccupationRepository occupationRepository, IRatingRepository ratingRepository)
         {
             _occupationRepository = occupationRepository;

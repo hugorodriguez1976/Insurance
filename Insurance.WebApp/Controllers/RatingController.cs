@@ -9,13 +9,6 @@ namespace Insurance.WebApp.Controllers
     {
         private readonly IRatingRepository _ratingRepository;
 
-        //todo: to fix issue with DI
-        public RatingController()
-        {
-            StandardKernel _kernel = new StandardKernel();
-            _kernel.Load(Assembly.GetExecutingAssembly());
-            _ratingRepository = _kernel.Get<IRatingRepository>();
-        }
         public RatingController(IRatingRepository ratingRepository)
         {
             _ratingRepository = ratingRepository;
